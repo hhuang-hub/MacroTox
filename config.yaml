@@ -1,0 +1,47 @@
+batch_size: 128
+num_epochs: 40
+lr: 0.0005
+
+paths:
+  csv_path: '/dataStor/home/hehuang/cartox_predict/SL-MTGNN/data/bonetox-new.csv'
+  # original data path
+  graph_path: '/dataStor/home/hehuang/cartox_predict/SL-MTGNN/graph/bone'
+  # path for the processed graph data
+  save_path: '/dataStor/home/hehuang/cartox_predict/SL-MTGNN/bone_ck_result_new'
+  # path for the cross-validation final result
+  model_path: '/dataStor/home/hehuang/cartox_predict/SL-MTGNN/model'
+  # path for saving the trained model checkpoints
+
+data:
+  smiles_col: 'smiles'
+  # name of the column in your CSV file that contains the SMILES strings
+  target_col: 'label'
+  # name of the column in your CSV file that contains the target variable (the label you want to predict)
+  selected_features: ['BCUTc-1l', 'GATS4c', 'SdsN', 'EState_VSA5', 'AATS8p', 'BCUTv-1h', 'ATSC2i', 'JGI5', 'RotRatio', 'MAXdssC', 'SlogP_VSA5', 'MINssCH2', 'MAXsOH', 'GATS5pe', 'Kier3', 'AATS7i', 'ATSC5i', 'GATS6c', 'GATS4p', 'GATS7c', 'MDEC-23', 'SMR_VSA1', 'AATSC6dv', 'JGI7', 'ATSC3c', 'MAXdO', 'AATSC6i', 'GATS4s', 'BCUTd-1l', 'VSA_EState4', 'ATSC3se', 'MINdO', 'MINsOH', 'PEOE_VSA13', 'GATS4d', 'ATSC5dv', 'GATS5c', 'GATS8s', 'MDEO-11', 'AATSC2i', 'GATS6d', 'MINsNH2', 'AATS5p', 'GATS5s', 'MAXssNH', 'ATSC1are', 'ATSC5are', 'AATSC1are', 'MINssO', 'Kier2', 'AATS7s', 'AXp-7d', 'MAXssCH2', 'AATS8v', 'ATSC2v', 'ATSC5pe', 'GATS4Z', 'SpMAD_Dzv', 'MINdssC', 'JGI6', 'ATSC2p', 'ATSC3i', 'SsOH', 'MDEC-13', 'JGI2', 'AATS8i', 'ATSC1c', 'ATSC6i', 'AATSC1v', 'MATS5se', 'GATS7d', 'MINaaN', 'ATSC6d', 'AATSC0i', 'MAXaaN', 'MINsCl', 'AETA_eta_L', 'SIC4', 'BIC5', 'EState_VSA7', 'SpMax_A', 'AATS6p', 'HybRatio', 'MINdsN', 'AETA_beta_s', 'GGI4', 'ATSC5s', 'ATSC7i', 'MATS3se', 'GATS5se', 'GATS3pe', 'MINaasC', 'ETA_dAlpha_A', 'PEOE_VSA3', 'VSA_EState8', 'AATS8dv', 'AATS6d', 'ATSC6dv', 'ATSC8dv', 'ATSC2se']
+  # list of the selected features (descriptors) to be used in the model. Make sure these features are present in your dataset and are relevant to your prediction task.
+
+settings:
+  seed: 0
+  # random seed for reproducibility
+  sim_threshold1: 0.6
+  # similarity threshold for the first similar graph module of training
+  sim_threshold2: 0.6
+  # similarity threshold for the second similar graph module of training
+  sim_threshold3: 0.95
+  # similarity threshold for the final similar graph module of training
+  drop_edge_num1: 15
+  # number of edges to drop in the first similar graph module of training
+  drop_edge_num2: 5
+  # number of edges to drop in the second similar graph module of training
+  finger_dim: 167
+  # dimension of the molecular fingerprint (e.g., ECFP, MACCS) used in the model. Adjust this based on the specific fingerprint type you are using.
+  graph_dim: 12
+  # dimension of the graph features (descriptors) used in the model. Adjust this based on the number of descriptors you are using.
+  smi_dim: 768
+  # dimension of the SMILES string embedding used in the model. Adjust this based on the specific embedding method you are using (e.g., one-hot encoding, pre-trained embeddings).
+  des_dim: 65
+  # dimension of the descriptor features used in the model. Adjust this based on the number of descriptors you are using.
+  out_dim: 1
+  # dimension of the output layer (e.g., 1 for binary classification, number of classes for multi-class classification)
+  alpha: 10
+  # weight for the loss function (adjust this based on the importance of different loss components in your model)
