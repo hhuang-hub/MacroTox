@@ -17,13 +17,13 @@ State-of-the-art AI models often face a "feature starvation" dilemma when addres
 We highly recommend using Miniconda to manage your Python environment. Before quick start, you need to download the code related to MolFormer(https://huggingface.co/ibm-research/MoLFormer-XL-both-10pct).
 1. Clone the repository:
 ```
-git clone https://github.com/hhuang-hub/SL-MTGNN.git
-cd SL-MTGNN
+git clone https://github.com/hhuang-hub/MacroTox.git
+cd MacroTox
 ```
 2. Create and activate a conda environment:
 ```
 conda env create -f environment.yml
-conda activate slmtgnn
+conda activate macrotox
 ```
 
 📊 Data Preparation
