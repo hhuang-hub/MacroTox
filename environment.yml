@@ -1,4 +1,4 @@
-name: MacroTox
+name: macrotox
 channels:
   - https://repo.anaconda.com/pkgs/main
   - conda-forge

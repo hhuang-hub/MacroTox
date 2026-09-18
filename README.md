@@ -1,6 +1,6 @@
-# SL-MTGNN: Macroscopic Graph Topology-Based Multimodal Learning Framework for Robust Molecular Toxicity Prediction
+# MacroTox: Macroscopic Graph Topology-Based Multimodal Learning Framework for Robust Molecular Toxicity Prediction
 
-SL-MTGNN is a multimodal deep learning framework that effectively predicts complex toxicological endpoints (e.g., drug-induced bone toxicity) by constructing a dynamic macroscopic drug-drug similarity graph to compensate for the lack of high-resolution biological features.
+MacroTox is a multimodal deep learning framework that effectively predicts complex toxicological endpoints (e.g., drug-induced bone toxicity) by constructing a dynamic macroscopic drug-drug similarity graph to compensate for the lack of high-resolution biological features.
 
 ---
 
